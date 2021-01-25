@@ -1,0 +1,22 @@
+import java.util.*;//import this so we can use Scanner class
+
+public class ReverseStringUsingToCharArray {//name of our class
+  public static void main(String[] args) {//declare main method
+    
+    String s;//declare a string to hold input
+    Scanner scanner1 = new Scanner(System.in); //create a scanner object/instance with the Scanner class attributes. This comes from the package we imported at the beginning.
+    System.out.println("Enter your string"); //from the pre-defined System class (that Java imports by default) print a message on the console for the user to read.
+    s = scanner1.nextLine();//read the input and save in a string variable
+    scanner1.close(); //Shut off the scanner
+    
+    char [] stringCharArray = s.toCharArray(); //declare a character array and save in it the result of using the tochararray method on our string
+    String reversedString = "";//declare a blank string so we can convert chararray back to string as we reverse it
+    
+    for(int i = stringCharArray.length-1; i>=0; i--) {
+      reversedString = reversedString + stringCharArray[i]; //iterate through the chararray backwards and save each character in the empty string object
+    }
+    
+    System.out.print("The reversed string of '"+s+"' is: " ); //need to print it as a string rather than an array 
+    System.out.println(reversedString);
+  }
+}
